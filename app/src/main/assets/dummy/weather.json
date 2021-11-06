@@ -1,0 +1,43 @@
+{
+    "coord": {
+        "lon": -99.1332,
+        "lat": 19.4326
+    },
+    "weather": [
+        {
+            "id": 802,
+            "main": "Clouds",
+            "description": "scattered clouds",
+            "icon": "03n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 293.09,
+        "feels_like": 292.05,
+        "temp_min": 292.62,
+        "temp_max": 293.09,
+        "pressure": 1026,
+        "humidity": 35
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 4.47,
+        "deg": 360
+    },
+    "clouds": {
+        "all": 30
+    },
+    "dt": 1636161073,
+    "sys": {
+        "type": 2,
+        "id": 47729,
+        "country": "MX",
+        "sunrise": 1636115964,
+        "sunset": 1636156851
+    },
+    "timezone": -21600,
+    "id": 3530597,
+    "name": "Mexico City",
+    "cod": 200
+}

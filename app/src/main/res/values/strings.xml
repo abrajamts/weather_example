@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Prueba</string>
+    <string name="playingNow">Peliculas de ahora</string>
+    <string name="mostPopular">Peliculas populares</string>
+    <string name="moviesPlayingNow">Ver peliculas de ahora</string>
+    <string name="moviesMostPopular">Ver peliculas populares</string>
+    <string name="errorConnection">Error de conexión</string>
+</resources>

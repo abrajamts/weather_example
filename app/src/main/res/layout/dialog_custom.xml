@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#44000000">
+
+    <LinearLayout style="@style/lyDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24sp">
+
+            <ImageView
+                android:id="@+id/ivIconCustomDialog"
+                android:layout_width="45sp"
+                android:layout_height="45sp"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_alert" />
+
+            <TextView
+                android:id="@+id/tvTitleCustomDialog"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Atención"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivIconCustomDialog"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivIconCustomDialog"
+                app:layout_constraintTop_toTopOf="@+id/ivIconCustomDialog" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivIconCustomDialog">
+
+                <TextView
+                    android:id="@+id/tvMessageCustomDialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/color_transparent_dark_black"
+                    android:textSize="16sp"
+                    tools:text="descripción de mensaje de alerta. descripción de mensaje de alerta. descripción de mensaje de alerta. descripción de mensaje de alerta. descripción de mensaje de alerta. " />
+
+
+                <ImageView
+                    android:id="@+id/imgCustomDialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="150sp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4sp"
+                    android:layout_marginBottom="4sp"
+                    android:visibility="gone"
+                    tools:srcCompat="@drawable/ic_location_map" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lavCustomDialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="150sp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:visibility="gone"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true" />
+
+                <Button
+                    android:id="@+id/btnMainCustomDialog"
+                    style="@style/btnStyleRoundButtonContinue"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="16sp"
+                    android:textAllCaps="false"
+                    tools:text="Aceptar" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</RelativeLayout>

@@ -12,9 +12,12 @@ import android.location.LocationListener
 import android.location.LocationManager
 import android.provider.Settings
 import android.util.Log
+import android.view.View
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.abrahammontes.prueba.R
 import com.abrahammontes.prueba.activities.SplashScreenActivity
+import com.abrahammontes.prueba.dialogs.DialogCustom
 
 class GeolocationManager(val context: Context) {
     private lateinit var locationManager : LocationManager
@@ -26,7 +29,7 @@ class GeolocationManager(val context: Context) {
         Log.i(TAG, "$TAG initialization successful")
     }
 
-    fun perssionEnabled() : Boolean {
+    fun permissionEnabled() : Boolean {
         return ContextCompat.checkSelfPermission(context, android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
     }
 
@@ -48,7 +51,7 @@ class GeolocationManager(val context: Context) {
     }
 
     fun checkStatus(ctx: Context) : Boolean {
-        if (perssionEnabled()) {
+        if (permissionEnabled()) {
             if (sensorEnabled()) {
                 return true
             } else {
@@ -60,8 +63,36 @@ class GeolocationManager(val context: Context) {
         return false
     }
 
+    fun removeLocation() {
+        try {
+            locationManager.removeUpdates(mlocationListener)
+            Log.d(TAG, "removeLocation")
+        } catch (e: Exception) {
+            Log.d(TAG, e.message.toString())
+        }
+    }
+
+    fun checkLocationDevice(ctx: Context) : Boolean {
+        if (permissionEnabled()) {
+            if (sensorEnabled()) {
+                return true
+
+            } else {
+                DialogCustom(ctx, "Ubicación", "Para continuar enciende tu ubicación", "Configuración", View.OnClickListener {
+                    ctx.startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))
+                }, R.drawable.ic_location_map)
+            }
+
+        } else {
+            DialogCustom(ctx, "Permisos", "Para continuar debes permitir el acceso a tu localización", "Continuar", View.OnClickListener {
+                requestPermission(ctx)
+            }, R.drawable.ic_map_location).show()
+        }
+        return false
+    }
+
     fun toggleLocation(ctx: Context) {
-        if (checkStatus(ctx)) {
+        if (checkLocationDevice(ctx)) {
             val criteria = Criteria()
             criteria.accuracy = Criteria.ACCURACY_FINE
             criteria.isAltitudeRequired = false

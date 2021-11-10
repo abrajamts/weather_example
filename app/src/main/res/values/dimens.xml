@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tvSizeRegularText_xxs">6sp</dimen>
+    <dimen name="tvSizeRegularText_xs">8sp</dimen>
+    <dimen name="tvSizeRegularText_s">10sp</dimen>
+    <dimen name="tvSizeRegularText_xm">11sp</dimen>
+    <dimen name="tvSizeRegularText_m">12sp</dimen>
+    <dimen name="tvSizeRegularText_l">14sp</dimen>
+    <dimen name="tvSizeRegularText_xl">16sp</dimen>
+    <dimen name="tvSizeRegularText_xxl">18sp</dimen>
+    <dimen name="tvSizeRegularText_xxxl">20sp</dimen>
+    <dimen name="tvSizeRegularText_3xl">25sp</dimen>
+    <dimen name="tvSizeRegularText_4xl">26sp</dimen>
+    <dimen name="tvSizeRegularText_5xl">32sp</dimen>
+    <dimen name="tvSizeRegularText_6xl">38sp</dimen>
+    <dimen name="tvSizeRegularText_7xl">44sp</dimen>
+    <dimen name="tvSizaRegularOTP">17dp</dimen>
+
+    <dimen name="activity_horizontal_margin">12dp</dimen>
+    <dimen name="activity_vertical_margin">12dp</dimen>
+
+    <dimen name="margin_common_minimum">2dp</dimen>
+    <dimen name="margin_common_minimal">3dp</dimen>
+    <dimen name="margin_common_minimal_2">4dp</dimen>
+    <dimen name="margin_common_minimal_3">5dp</dimen>
+    <dimen name="margin_common_medium">6dp</dimen>
+    <dimen name="margin_common_normal">9dp</dimen>
+    <dimen name="margin_common_double">12dp</dimen>
+    <dimen name="margin_common_double_x">14dp</dimen>
+    <dimen name="margin_common_double_xx">65dp</dimen>
+    <dimen name="margin_common_double_medium">18dp</dimen>
+    <dimen name="margin_common_double_medium_2">22dp</dimen>
+    <dimen name="margin_common_double_x1">24dp</dimen>
+    <dimen name="margin_common_triple">27dp</dimen>
+    <dimen name="margin_common_triple1">27dp</dimen>
+    <dimen name="margin_common_triple2">37dp</dimen>
+    <dimen name="margin_common_quadruple">36dp</dimen>
+    <dimen name="margin_common_quintuple">48dp</dimen>
+    <dimen name="margin_common_quintuple_x">72dp</dimen><!--Modificaciòn Circular 14 -->
+    <dimen name="margin_common_service">102dp</dimen>
+    <dimen name="margin_common_service2">112dp</dimen>
+
+    <dimen name="btn_radius">20dp</dimen>
+    <dimen name="btn_big_radius">10dp</dimen>
+    <dimen name="btn_middle_radius">5dp</dimen>
+    <dimen name="btn_mode_radius">3dp</dimen>
+    <dimen name="btn_height">35dp</dimen>
+    <dimen name="btn_height_remember">35dp</dimen>
+</resources>

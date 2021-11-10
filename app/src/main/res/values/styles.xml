@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="btnStyleRoundButton" parent="android:style/Widget.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/tvSizeRegularText_xl</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/btn_round_drawable</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="btnStyleRoundButtonRed" parent="btnStyleRoundButton">
+        <item name="android:background">@drawable/btn_round_drawable_blue</item>
+    </style>
+
+    <style name="btnStyleRoundButtonContinue" parent="btnStyleRoundButtonRed">
+        <item name="android:layout_marginLeft">@dimen/margin_common_double</item>
+        <item name="android:layout_marginRight">@dimen/margin_common_double</item>
+        <item name="android:enabled">true</item>
+    </style>
+
+    <style name="lyContentDialog">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingTop">@dimen/margin_common_medium</item>
+        <item name="android:paddingBottom">@dimen/margin_common_medium</item>
+    </style>
+
+    <!--Dialog-->
+    <style name="lyDialog">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/background_dialog</item>
+    </style>
+
+    <style name="Theme.Loading" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+</resources>

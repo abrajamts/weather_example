@@ -15,4 +15,15 @@
     <color name="color2">#7e455e</color>
     <color name="color3">#796e25</color>
     <color name="color4">#59717c</color>
+
+    <color name="color_drawer_shade">#95000000</color>
+    <color name="color_drawer_shade_menu">#99ffffff</color>
+    <color name="color_transparent_black_2">#50000000</color>
+    <color name="color_transparent_black">#70000000</color>
+    <color name="color_transparent_dark_black">#95000000</color>
+    <color name="color_transparent_darkest_black">#be000000</color>
+    <color name="color_app_blue">#0066ec</color>
+    <color name="color_app_blue_dark">#0055cc</color>
+    <color name="color_app_medium_grey">#CECECE</color>
+    <color name="new_exp_progress_dialog_bg_color">#CCFFFFFF</color>
 </resources>

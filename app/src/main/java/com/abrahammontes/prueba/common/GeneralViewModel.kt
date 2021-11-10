@@ -18,48 +18,20 @@ import retrofit2.http.Query
 
 class GeneralViewModel(app: Application, private val apiService: PrApiService) : BaseViewModel(app) {
 
-    fun validateLocation(ctx: Context) : LiveData<Result<Boolean>> {
-        var step = 0
-        val result = MutableLiveData<Result<Boolean>>()
-        launch(CoroutineExceptionHandler { _, e -> result.postError(e) })  {
-            if (PruebaApplication().getInstance().geolocationManager()!!.checkStatus(ctx)) {
-
-                if (PruebaApplication().getInstance().geolocationManager()!!.validGeolocation()) {
-                    result.value = Result.Success(true)
-                } else {
-                    PruebaApplication().getInstance().geolocationManager()!!.toggleLocation(ctx)
-
-                    while (step < 3) {
-                        delay(1500L)
-                        if (PruebaApplication().getInstance().geolocationManager()!!.validGeolocation()) {
-                            result.value = Result.Success(true)
-                        }
-                        step++
-
-                        if (step == 3 && result.value != Result.Success(true)) {
-                            result.value = Result.Success(false)
-                        }
-                    }
-                }
-            } else {
-                result.value = Result.Success(false)
-            }
-        }
-        return result
-    }
+    private val app : PruebaApplication = PruebaApplication().getInstance()
 
     fun getLocationForce(ctx: Context) : LiveData<Result<Pair<String, String>>> {
         var step = 0
         var done = false
         val result = MutableLiveData<Result<Pair<String, String>>>()
         launch(CoroutineExceptionHandler { _, e -> result.postError(e) }) {
-            if (PruebaApplication().getInstance().geolocationManager()!!.checkLocationDevice(ctx)) {
-                PruebaApplication().getInstance().geolocationManager()!!.toggleLocation(ctx)
+            if (app.geolocationManager().checkLocationDevice(ctx)) {
+                app.geolocationManager().toggleLocation(ctx)
 
                 while (step < 100) {
                     delay(1500L)
                     if (!done) {
-                        if (PruebaApplication().getInstance().geolocationManager()!!.validGeolocation()) {
+                        if (app.geolocationManager().validGeolocation()) {
                             done = true
                             result.value = Result.Success(Pair(GeolocationManager.longitud, GeolocationManager.latitude))
                         }

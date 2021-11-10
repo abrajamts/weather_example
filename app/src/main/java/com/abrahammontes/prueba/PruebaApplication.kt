@@ -23,11 +23,10 @@ class PruebaApplication : Application() {
     }
 
     @Synchronized
-    fun geolocationManager(): GeolocationManager? {
+    fun geolocationManager(): GeolocationManager {
         if (mGeolocation == null) {
             mGeolocation = GeolocationManager(this.applicationContext)
         }
-        return mGeolocation
-        return null
+        return mGeolocation!!
     }
 }

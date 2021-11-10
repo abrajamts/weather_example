@@ -8,7 +8,6 @@ import android.provider.Settings
 import android.view.View
 import android.widget.Toast
 import com.abrahammontes.prueba.MainActivity
-import com.abrahammontes.prueba.PruebaApplication
 import com.abrahammontes.prueba.R
 import com.abrahammontes.prueba.activities.base.BaseWeatherActivity
 import com.abrahammontes.prueba.data.Result
@@ -33,14 +32,14 @@ class SplashScreenActivity : BaseWeatherActivity() {
 
     fun checkPermission() {
         isRunningPermission = true
-        if (PruebaApplication().getInstance().geolocationManager()!!.permissionEnabled()) {
-            if (PruebaApplication().getInstance().geolocationManager()!!.sensorEnabled()) {
+        if (app.geolocationManager().permissionEnabled()) {
+            if (app.geolocationManager().sensorEnabled()) {
 
                 tvMessage.setText("Obteniendo ubicación")
                 viewModel.value.getLocationForce(this).observe(this, { resultGeo ->
                     val result = resultGeo.getResultIfNotHandled()
                     if (result is Result.Success<*>) {
-                        PruebaApplication().getInstance().geolocationManager()!!.removeLocation()
+                        app.geolocationManager().removeLocation()
                         tvMessage.setText("Estamos listos")
                         Handler().postDelayed({
                             val intent = Intent(this, MainActivity::class.java)
@@ -50,6 +49,7 @@ class SplashScreenActivity : BaseWeatherActivity() {
                     }
 
                     if (result is Result.Error) {
+                        app.geolocationManager().removeLocation()
                         tvMessage.setText("No pudimos obtener tu ubicación. Intenta nuevamente.")
                         Handler().postDelayed({
                             Toast.makeText(this, "Error", Toast.LENGTH_LONG).show()
@@ -67,7 +67,7 @@ class SplashScreenActivity : BaseWeatherActivity() {
         } else {
             tvMessage.setText("Solicitando permisos")
             DialogCustom(this, "Permisos", "Para continuar debes permitir el acceso a tu localización", "Continuar", View.OnClickListener {
-                PruebaApplication().getInstance().geolocationManager()!!.requestPermission(this)
+                app.geolocationManager().requestPermission(this)
                 isRunningPermission = false
             }, R.drawable.ic_map_location).show()
         }
